@@ -58,7 +58,7 @@ body, html {
 /* Estilos para las preguntas */
 .pregunta {
     font-family: 'Georgia', serif; /* Cambia la fuente */
-    font-size: 2.5rem; /* Tamaño de la fuente */
+    font-size: 2.3rem; /* Tamaño de la fuente */
     font-weight: bold; /* Grosor de la fuente */
     color: #ffffff; /* Color del texto */
     text-transform: uppercase; /* Convertir texto a mayúsculas */
