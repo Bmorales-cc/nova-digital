@@ -1,0 +1,145 @@
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+/* Contenedor principal */
+.contenedor-principal {
+    display: flex;
+    height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+}
+
+/* Estilos para cada sección */
+.seccion {
+    flex: 1; /* Cada sección ocupa el mismo espacio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transición suave para transform y filter */
+}
+
+/* Fondo de cada sección */
+#quienes-somos {
+    background-image: url('../assets/quienes-somos.jpg'); /* Ruta de la imagen */
+}
+
+#servicios {
+    background-image: url('../assets/servicios.jpg'); /* Ruta de la imagen */
+}
+
+#contacto {
+    background-image: url('../assets/contacto.jpg'); /* Ruta de la imagen */
+}
+
+/* Contenedor de cada sección */
+.contenido {
+    padding: 20px;
+    border-radius: 10px;
+    transition: opacity 0.5s ease;
+    max-width: 80%; /* Limita el ancho del contenido */
+    margin: 0 auto; /* Centra el contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    text-align: center; /* Asegura que el texto esté centrado */
+    position: relative; /* Necesario para posicionar .info-oculta */
+}
+
+/* Estilos para las preguntas */
+.pregunta {
+    font-family: 'Georgia', serif; /* Cambia la fuente */
+    font-size: 2.5rem; /* Tamaño de la fuente */
+    font-weight: bold; /* Grosor de la fuente */
+    color: #ffffff; /* Color del texto */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    z-index: 1; /* Asegura que esté por encima de .info-oculta */
+}
+
+/* Estilos para el contenido de las respuestas */
+.info-oculta {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente oscuro */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center; /* Centra el texto dentro de las respuestas */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    position: absolute; /* Posiciona .info-oculta fuera del flujo normal */
+    top: 50%; /* Lo coloca en el centro vertical */
+    left: 50%; /* Lo coloca en el centro horizontal */
+    transform: translate(-50%, -50%); /* Centra exactamente */
+    z-index: 0; /* Lo coloca detrás del título */
+}
+/* Efecto hover para mostrar .info-oculta */
+.seccion:hover .info-oculta {
+    opacity: 1;
+    z-index: 2; /* Asegura que esté por encima del título */
+}
+
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #80726e69;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.boton:hover {
+    background: #e64a19;
+}
+
+/* Efecto hover para la sección */
+.seccion:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    z-index: 2; /* Asegura que la sección hovered esté por encima */
+}
+
+/* Desenfoque para las secciones no hovered */
+.contenedor-principal:hover .seccion:not(:hover) {
+    filter: blur(5px); /* Aplica un desenfoque */
+}
+
+/* Efecto hover para el título y el contenido */
+.seccion:hover h2 {
+    opacity: 0;
+}
+
+.seccion:hover .info-oculta {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .boton {
+        padding: 8px 16px;
+    }
+
+    .contenido {
+        padding: 15px; /* Menos padding en dispositivos móviles */
+        max-width: 90%; /* Más ancho en dispositivos móviles */
+    }
+
+    .info-oculta {
+        padding: 15px; /* Menos padding en dispositivos móviles */
+    }
+}
